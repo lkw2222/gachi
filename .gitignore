@@ -1,0 +1,19 @@
+# 민감/원본 자료 (외부 공개 금지, 호스팅에 불필요)
+# document/ : 사업자등록증 PDF, 회사소개서 pptx, 원본 자료
+document/
+# images/ : 로고/슬로건/지도 원본 (가공본은 assets/img 에 있음)
+images/
+
+# 의존성 / 빌드 캐시
+node_modules/
+
+# 임시 파일
+_pptx_unpack/
+_tmp_*.zip
+*.log
+
+# OS / 에디터
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

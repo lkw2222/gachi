@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m markitdown \"\\(260529\\)회사소개서_가치\\(초안\\).pptx\")",
+      "PowerShell(python -m markitdown \"C:\\\\project\\\\gachi\\\\\\(260529\\)ȸ��Ұ���_��ġ\\(�ʾ�\\).pptx\")",
+      "PowerShell(py --version; \\(Get-Command python\\).Source; \\(Get-Command py -ErrorAction SilentlyContinue\\).Source)",
+      "PowerShell($dst=\"C:\\\\project\\\\gachi\\\\_pptx_unpack\\\\ppt\\\\slides\"; 1..10 | ForEach-Object { $f=\"$dst\\\\slide$_.xml\"; Write-Output \"===== SLIDE $_ =====\"; [xml]$x=Get-Content $f -Encoding UTF8; $texts = $x.GetElementsByTagName\\(\"a:t\"\\); foreach\\($t in $texts\\){ if\\($t.InnerText.Trim\\(\\)\\){ Write-Output $t.InnerText } } })",
+      "PowerShell($asset=\"C:\\\\project\\\\gachi\\\\assets\"; New-Item -ItemType Directory -Path $asset -Force | Out-Null; Copy-Item \"C:\\\\project\\\\gachi\\\\_pptx_unpack\\\\ppt\\\\media\\\\image3.png\" \"$asset\\\\logo.png\" -Force; Get-ChildItem $asset | Select-Object Name,Length)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(command -v magick)",
+      "Bash(magick -version)",
+      "Bash(node -e \"try{require.resolve\\('sharp'\\);console.log\\('sharp available'\\)}catch\\(e\\){console.log\\('no sharp'\\)}\")",
+      "Bash(npm install *)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(node build/gen-pages.js)",
+      "Bash(node build/replace-emojis.js)",
+      "Bash(node -e ' *)",
+      "PowerShell(Copy-Item \"C:\\\\project\\\\gachi\\\\images\\\\map.png\" \"C:\\\\project\\\\gachi\\\\assets\\\\img\\\\map.png\" -Force; Add-Type -AssemblyName System.Drawing; $img=[System.Drawing.Image]::FromFile\\(\"C:\\\\project\\\\gachi\\\\assets\\\\img\\\\map.png\"\\); \"size: $\\($img.Width\\)x$\\($img.Height\\)\"; $img.Dispose\\(\\))",
+      "Bash(ls -1 document)",
+      "Bash(ls -1 images)",
+      "Bash(find . -iname \"*.pdf\" -o -iname \"*.pptx\")",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git check-ignore *)"
+    ]
+  }
+}
