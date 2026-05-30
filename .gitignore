@@ -17,3 +17,6 @@ _tmp_*.zip
 Thumbs.db
 .vscode/
 .idea/
+
+# Claude 로컬 권한 설정
+.claude/settings.local.json
