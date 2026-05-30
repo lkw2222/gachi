@@ -55,7 +55,7 @@ section{position:relative}
 .brand{display:flex;align-items:center;gap:11px}
 .brand img{height:38px;width:auto}
 .brand .bt{display:flex;flex-direction:column;line-height:1.05}
-.brand .bt b{font-weight:800;font-size:18px;color:#fff;transition:.3s}
+.brand .bt b{font-weight:800;font-size:18px;color:#fff;transition:.3s;white-space:nowrap}
 .brand .bt span{font-size:11px;letter-spacing:.12em;color:var(--gold-light);font-weight:600}
 #siteHeader.solid .brand .bt b,#siteHeader.scrolled .brand .bt b{color:var(--navy)}
 #siteHeader.solid .brand .bt span,#siteHeader.scrolled .brand .bt span{color:var(--gold)}
@@ -293,6 +293,10 @@ form.card .btn-gold{width:100%;justify-content:center;margin-top:8px;font-size:1
 }
 @media(max-width:760px){
   .gnb,.hdr-right .lang{display:none}
+  .hdr-right .btn-gold{display:none}      /* 상담신청 버튼: 드로어/플로팅에 있어 모바일 헤더에선 숨김 */
+  .brand .bt span{display:none}           /* GACHI CO., LTD. 영문 부제 숨김 */
+  .brand .bt b{font-size:16px}
+  .brand img{height:32px}
   .menu-toggle{display:block;z-index:120}
   .values,.services,.feat-grid,.process{grid-template-columns:1fr}
   .two{grid-template-columns:1fr}
