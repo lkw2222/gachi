@@ -117,6 +117,52 @@
     document.body.appendChild(el('<a href="/support/contact.html" class="btn btn-gold float-cta">'+L(UI.ko.float,UI.en.float)+'</a>'));
   }
 
+  /* ---------- 개인정보 동의 모달 ---------- */
+  function buildModal(){
+    if(document.getElementById("privacyModal")) return;
+    var m = el(
+      '<div class="modal-backdrop" id="privacyModal" aria-hidden="true">'+
+        '<div class="modal-box" role="dialog" aria-modal="true" aria-label="개인정보 수집·이용 동의">'+
+          '<div class="modal-head"><h3 data-en="Consent to Collection and Use of Personal Information">개인정보 수집·이용 동의</h3>'+
+            '<button class="modal-close" type="button" aria-label="닫기">×</button></div>'+
+          '<div class="modal-body">'+
+            '<table class="tbl"><tbody>'+
+              '<tr><td data-en="Items">수집 항목</td><td data-en="Name, phone, email, company (optional), inquiry details">이름, 연락처, 이메일, 회사명(선택), 문의 내용</td></tr>'+
+              '<tr><td data-en="Purpose">이용 목적</td><td data-en="Receiving and processing consultation requests, responding to inquiries, and notifying results">상담 신청 접수·처리, 문의 응대 및 결과 안내</td></tr>'+
+              '<tr><td data-en="Retention">보유 기간</td><td data-en="Destroyed without delay after the purpose is achieved (retained for the required period if mandated by law)">목적 달성 후 지체 없이 파기 (관련 법령상 필요 시 해당 기간 보관)</td></tr>'+
+            '</tbody></table>'+
+            '<p class="modal-note" data-en="You have the right to refuse consent; however, refusal may limit your consultation request.">동의를 거부할 권리가 있으며, 거부 시 상담 신청이 제한될 수 있습니다.</p>'+
+            '<p class="modal-note" data-en="See our <a href=\'/service/privacy.html\' target=\'_blank\' rel=\'noopener\'>Privacy Policy</a> for details.">자세한 내용은 <a href="/service/privacy.html" target="_blank" rel="noopener">개인정보처리방침</a>을 확인하세요.</p>'+
+          '</div>'+
+          '<div class="modal-foot">'+
+            '<button class="btn btn-line modal-close" type="button" data-en="Close">닫기</button>'+
+            '<button class="btn btn-gold" type="button" id="privacyAgree" data-en="Agree">동의합니다</button>'+
+          '</div>'+
+        '</div>'+
+      '</div>'
+    );
+    document.body.appendChild(m);
+
+    function open(){ m.classList.add("open"); m.setAttribute("aria-hidden","false"); }
+    function close(){ m.classList.remove("open"); m.setAttribute("aria-hidden","true"); }
+    window.openPrivacyModal = open;
+
+    m.querySelectorAll(".modal-close").forEach(function(b){ b.addEventListener("click", close); });
+    m.addEventListener("click", function(e){ if(e.target === m) close(); });
+    document.addEventListener("keydown", function(e){ if(e.key === "Escape") close(); });
+    var agree = m.querySelector("#privacyAgree");
+    if(agree) agree.addEventListener("click", function(){
+      var cb = document.querySelector("form.card input[name=privacy_consent]");
+      if(cb) cb.checked = true;
+      close();
+    });
+    // "(보기)" 링크 클릭 → 모달 (페이지 이동 방지)
+    document.addEventListener("click", function(e){
+      var a = e.target.closest && e.target.closest(".js-privacy");
+      if(a){ e.preventDefault(); open(); }
+    });
+  }
+
   /* ---------- 설정값 주입 ([data-cfg="phone"] 등) ---------- */
   function injectConfig(){
     document.querySelectorAll("[data-cfg]").forEach(function(n){
@@ -216,6 +262,6 @@
   function drawIcons(){ if(window.lucide && lucide.createIcons) try{ lucide.createIcons(); }catch(e){} }
   window.gachiIcons = drawIcons;
   document.addEventListener("DOMContentLoaded",function(){
-    buildHeader(); buildSubhero(); buildFooter(); injectConfig(); applyLang(); reveal(); drawIcons(); wireForms();
+    buildHeader(); buildSubhero(); buildFooter(); buildModal(); injectConfig(); applyLang(); reveal(); drawIcons(); wireForms();
   });
 })();
