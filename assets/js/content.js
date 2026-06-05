@@ -17,7 +17,7 @@ window.SITE = {
   estDate:    "2025년 12월 12일",   // 개업연월일
 
   phone:      "1533-2512",          // 대표번호
-  email:      "contact@gachi.co.kr",
+  email:      "gachi2512@naver.com",
 
   /* 상담신청 폼 전송 (Formspree) — https://formspree.io 에서 폼 생성 후 받은 엔드포인트를 붙여넣으세요.
      예: "https://formspree.io/f/abcdwxyz"  (비워두면 데모 모드로 동작) */

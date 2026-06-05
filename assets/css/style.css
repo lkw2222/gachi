@@ -253,8 +253,8 @@ form.card .btn-gold{width:100%;justify-content:center;margin-top:8px;font-size:1
 .form-note{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:14px;text-align:center}
 .form-status{font-size:13.5px;font-weight:600;margin-top:12px;text-align:center;min-height:18px;line-height:1.4}
 .consent{margin-bottom:10px}
-.chk{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;font-weight:500;color:rgba(255,255,255,.8);cursor:pointer;line-height:1.45}
-.chk input{width:17px;height:17px;flex-shrink:0;margin-top:2px;accent-color:var(--gold);cursor:pointer}
+.chk{display:flex;align-items:center;gap:11px;font-size:13.5px;font-weight:500;color:rgba(255,255,255,.8);cursor:pointer;line-height:1.45}
+.chk input{width:17px;height:17px;flex-shrink:0;accent-color:var(--gold);cursor:pointer}
 .chk a{color:var(--gold-light);text-decoration:underline;font-weight:600}
 .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
 
