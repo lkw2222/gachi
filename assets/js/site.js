@@ -156,18 +156,66 @@
     document.querySelectorAll(".reveal").forEach(function(n,i){ n.style.transitionDelay=(i%4*70)+"ms"; io.observe(n); });
   }
 
-  /* ---------- 폼 데모 핸들러 ---------- */
+  /* ---------- 상담신청 폼 (Formspree AJAX) ---------- */
+  function setStatus(form, msg, ok){
+    var s = form.querySelector(".form-status");
+    if(!s) return;
+    s.textContent = msg;
+    s.style.color = ok ? "var(--gold-light)" : "#ff9a9a";
+  }
   window.gachiSubmit=function(e){
     e.preventDefault();
-    alert(lang==="en"?"Thank you! Your inquiry has been received. We'll contact you within 1 business day.":
-      "감사합니다! 상담 신청이 접수되었습니다. 영업일 기준 1일 이내에 연락드리겠습니다.");
-    e.target.reset(); return false;
+    var form = e.target;
+    var endpoint = (S && S.formEndpoint) || form.getAttribute("action") || "";
+
+    // 엔드포인트 미설정 → 데모 모드
+    if(endpoint.indexOf("formspree.io") < 0){
+      setStatus(form, lang==="en"
+        ? "Demo mode: set SITE.formEndpoint in content.js to send for real."
+        : "데모 모드입니다. content.js의 formEndpoint를 설정하면 실제 전송됩니다.", true);
+      alert(lang==="en"?"Thank you! (demo)":"감사합니다! 상담 신청이 접수되었습니다. (데모 모드 — 실제 전송하려면 Formspree 엔드포인트를 설정하세요)");
+      form.reset(); return false;
+    }
+
+    var btn = form.querySelector("button[type=submit]");
+    var orig = btn ? btn.textContent : "";
+    if(btn){ btn.disabled = true; btn.textContent = lang==="en" ? "Sending..." : "전송 중..."; }
+    setStatus(form, lang==="en" ? "Sending..." : "전송 중...", true);
+
+    fetch(endpoint, { method:"POST", body:new FormData(form), headers:{ "Accept":"application/json" } })
+      .then(function(r){
+        if(r.ok){
+          setStatus(form, lang==="en"
+            ? "Thank you! Your inquiry has been sent. We'll contact you within 1 business day."
+            : "감사합니다! 상담 신청이 정상 접수되었습니다. 영업일 기준 1일 이내에 연락드리겠습니다.", true);
+          form.reset();
+        } else {
+          return r.json().then(function(d){
+            throw new Error((d && d.errors && d.errors.map(function(x){return x.message;}).join(", ")) || "error");
+          });
+        }
+      })
+      .catch(function(){
+        setStatus(form, lang==="en"
+          ? "Submission failed. Please try again or call us at " + S.phone + "."
+          : "전송에 실패했습니다. 잠시 후 다시 시도하시거나 대표번호 " + S.phone + " 로 연락 주세요.", false);
+      })
+      .then(function(){ if(btn){ btn.disabled = false; btn.textContent = orig; } });
+    return false;
   };
+  /* no-JS 대비 + 엔드포인트 주입: 폼 action/method 설정 */
+  function wireForms(){
+    if(!S || !S.formEndpoint) return;
+    document.querySelectorAll("form.card").forEach(function(f){
+      f.setAttribute("action", S.formEndpoint);
+      f.setAttribute("method", "POST");
+    });
+  }
 
   /* ---------- init ---------- */
   function drawIcons(){ if(window.lucide && lucide.createIcons) try{ lucide.createIcons(); }catch(e){} }
   window.gachiIcons = drawIcons;
   document.addEventListener("DOMContentLoaded",function(){
-    buildHeader(); buildSubhero(); buildFooter(); injectConfig(); applyLang(); reveal(); drawIcons();
+    buildHeader(); buildSubhero(); buildFooter(); injectConfig(); applyLang(); reveal(); drawIcons(); wireForms();
   });
 })();

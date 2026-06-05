@@ -490,6 +490,8 @@ PAGES["support/contact.html"] = {
       </div>
     </div>
     <form class="card reveal" onsubmit="return gachiSubmit(event)">
+      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <input type="hidden" name="_subject" value="[가치 홈페이지] 새 상담신청" />
       <div class="two">
         <div class="field"><label data-en="Name *">이름 *</label><input name="name" required placeholder="홍길동" data-ph-en="John Doe" /></div>
         <div class="field"><label data-en="Company">회사명</label><input name="company" placeholder="(주)가치" data-ph-en="gachi co." /></div>
@@ -507,7 +509,9 @@ PAGES["support/contact.html"] = {
         </select>
       </div>
       <div class="field"><label data-en="Message">문의 내용</label><textarea name="message" placeholder="문의하실 내용을 입력해주세요." data-ph-en="Tell us how we can help."></textarea></div>
+      <div class="field consent"><label class="chk"><input type="checkbox" name="privacy_consent" value="동의함" required /><span data-en='I agree to the collection and use of personal information. <a href="/service/privacy.html" target="_blank">(View)</a>'>개인정보 수집·이용에 동의합니다. <a href="/service/privacy.html" target="_blank">(보기)</a></span></label></div>
       <button type="submit" class="btn btn-gold" data-en="Submit Inquiry">상담 신청하기</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
       <p class="form-note" data-en="* We'll reach out within 1 business day.">* 제출 시 담당자가 영업일 기준 1일 이내에 연락드립니다.</p>
     </form>
   </div></section>`,

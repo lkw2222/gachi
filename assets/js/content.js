@@ -18,6 +18,10 @@ window.SITE = {
 
   phone:      "1533-2512",          // 대표번호
   email:      "contact@gachi.co.kr",
+
+  /* 상담신청 폼 전송 (Formspree) — https://formspree.io 에서 폼 생성 후 받은 엔드포인트를 붙여넣으세요.
+     예: "https://formspree.io/f/abcdwxyz"  (비워두면 데모 모드로 동작) */
+  formEndpoint: "",
   address:    "대전광역시 유성구 은구비남로33번길 13-8, 322호 (지족동, 양지빌딩)",
   addressEn:  "Rm 322, 13-8, Eunguibinam-ro 33beon-gil, Yuseong-gu, Daejeon, Korea",
   bizno:      "406-81-67284",       // 사업자등록번호
