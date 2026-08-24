@@ -1,0 +1,186 @@
+{
+  "products": [
+    {
+      "name": "Highest Level of Durability",
+      "slug": "intro",
+      "thumb": "/assets/img/products/enerpac/intro-t.jpg",
+      "details": [
+        "/assets/img/products/enerpac/intro-d1.jpg",
+        "/assets/img/products/enerpac/intro-d2.jpg",
+        "/assets/img/products/enerpac/intro-d3.jpg",
+        "/assets/img/products/enerpac/intro-d4.jpg",
+        "/assets/img/products/enerpac/intro-d5.jpg",
+        "/assets/img/products/enerpac/intro-d6.jpg",
+        "/assets/img/products/enerpac/intro-d7.jpg",
+        "/assets/img/products/enerpac/intro-d8.jpg",
+        "/assets/img/products/enerpac/intro-d9.jpg",
+        "/assets/img/products/enerpac/intro-d10.jpg",
+        "/assets/img/products/enerpac/intro-d11.jpg",
+        "/assets/img/products/enerpac/intro-d12.jpg",
+        "/assets/img/products/enerpac/intro-d13.jpg",
+        "/assets/img/products/enerpac/intro-d14.jpg",
+        "/assets/img/products/enerpac/intro-d15.jpg",
+        "/assets/img/products/enerpac/intro-d16.jpg",
+        "/assets/img/products/enerpac/intro-d17.jpg",
+        "/assets/img/products/enerpac/intro-d18.jpg",
+        "/assets/img/products/enerpac/intro-d19.jpg"
+      ]
+    },
+    {
+      "name": "BHP Series 6-22 ton",
+      "slug": "bhp",
+      "thumb": "/assets/img/products/enerpac/bhp-t.png",
+      "details": [
+        "/assets/img/products/enerpac/bhp-d1.png"
+      ]
+    },
+    {
+      "name": "GPS Series 13-45 ton",
+      "slug": "gps",
+      "thumb": "/assets/img/products/enerpac/gps-t.png",
+      "details": [
+        "/assets/img/products/enerpac/gps-d1.png"
+      ]
+    },
+    {
+      "name": "MPS Series 13-45 ton",
+      "slug": "mps",
+      "thumb": "/assets/img/products/enerpac/mps-t.png",
+      "details": [
+        "/assets/img/products/enerpac/mps-d1.png"
+      ]
+    },
+    {
+      "name": "SGM Series 1-20ton",
+      "slug": "sgm",
+      "thumb": "/assets/img/products/enerpac/sgm-t.png",
+      "details": [
+        "/assets/img/products/enerpac/sgm-d1.png"
+      ]
+    },
+    {
+      "name": "SG-Series",
+      "slug": "sg",
+      "thumb": "/assets/img/products/enerpac/sg-t.jpg",
+      "details": [
+        "/assets/img/products/enerpac/sg-d1.png"
+      ]
+    },
+    {
+      "name": "HYD’ TORQUE WRENCH (유압토크렌치)",
+      "slug": "torque-wrench",
+      "thumb": "/assets/img/products/enerpac/torque-wrench-t.png",
+      "details": [
+        "/assets/img/products/enerpac/torque-wrench-d1.png",
+        "/assets/img/products/enerpac/torque-wrench-d2.png",
+        "/assets/img/products/enerpac/torque-wrench-d3.png"
+      ]
+    },
+    {
+      "name": "ELECTRIC PUMP (전동 유압펌프 1HP 이상)",
+      "slug": "electric-pump",
+      "thumb": "/assets/img/products/enerpac/electric-pump-t.png",
+      "details": [
+        "/assets/img/products/enerpac/electric-pump-d1.png",
+        "/assets/img/products/enerpac/electric-pump-d2.png"
+      ]
+    },
+    {
+      "name": "HAND PUMP (핸드펌프)",
+      "slug": "hand-pump",
+      "thumb": "/assets/img/products/enerpac/hand-pump-t.png",
+      "details": [
+        "/assets/img/products/enerpac/hand-pump-d1.png",
+        "/assets/img/products/enerpac/hand-pump-d2.png"
+      ]
+    },
+    {
+      "name": "ELECTRIC ECONOMY PUMP(전동 유압펌프)",
+      "slug": "electric-economy-pump",
+      "thumb": "/assets/img/products/enerpac/electric-economy-pump-t.png",
+      "details": [
+        "/assets/img/products/enerpac/electric-economy-pump-d1.png"
+      ]
+    },
+    {
+      "name": "HYD’ PULLER (안전작업용 유압풀러)",
+      "slug": "puller",
+      "thumb": "/assets/img/products/enerpac/puller-t.png",
+      "details": [
+        "/assets/img/products/enerpac/puller-d1.png",
+        "/assets/img/products/enerpac/puller-d2.png"
+      ]
+    },
+    {
+      "name": "WEDGE SPREAD (틈새용 유압잭)",
+      "slug": "wedge-spread",
+      "thumb": "/assets/img/products/enerpac/wedge-spread-t.png",
+      "details": [
+        "/assets/img/products/enerpac/wedge-spread-d1.png",
+        "/assets/img/products/enerpac/wedge-spread-d2.png"
+      ]
+    },
+    {
+      "name": "NUT SPLITTER (너트 커터기)",
+      "slug": "nut-splitter",
+      "thumb": "/assets/img/products/enerpac/nut-splitter-t.png",
+      "details": [
+        "/assets/img/products/enerpac/nut-splitter-d1.png",
+        "/assets/img/products/enerpac/nut-splitter-d2.png"
+      ]
+    },
+    {
+      "name": "AIR HYD’ PUMP (에어 유압펌프)",
+      "slug": "air-pump",
+      "thumb": "/assets/img/products/enerpac/air-pump-t.png",
+      "details": [
+        "/assets/img/products/enerpac/air-pump-d1.png"
+      ]
+    },
+    {
+      "name": "DOUBLE ACTING JACK (복동 유압잭)",
+      "slug": "double-acting-jack",
+      "thumb": "/assets/img/products/enerpac/double-acting-jack-t.png",
+      "details": [
+        "/assets/img/products/enerpac/double-acting-jack-d1.png"
+      ]
+    },
+    {
+      "name": "CENTER HOLE JACK (구멍관통 유압잭)",
+      "slug": "center-hole-jack",
+      "thumb": "/assets/img/products/enerpac/center-hole-jack-t.png",
+      "details": [
+        "/assets/img/products/enerpac/center-hole-jack-d1.png"
+      ]
+    },
+    {
+      "name": "ALUMINIUM JACK (알루미늄 유압잭)",
+      "slug": "aluminium-jack",
+      "thumb": "/assets/img/products/enerpac/aluminium-jack-t.png",
+      "details": [
+        "/assets/img/products/enerpac/aluminium-jack-d1.png"
+      ]
+    },
+    {
+      "name": "SINGLE ACTING (단동 유압잭)",
+      "slug": "single-acting-jack",
+      "thumb": "/assets/img/products/enerpac/single-acting-jack-t.png",
+      "details": []
+    },
+    {
+      "name": "LOW HEIGHT JACK (낮은 높이 유압잭)",
+      "slug": "low-height-jack",
+      "thumb": "/assets/img/products/enerpac/low-height-jack-t.png",
+      "details": []
+    },
+    {
+      "name": "FLAT JACK (낮은형 유압잭)",
+      "slug": "flat-jack",
+      "thumb": "/assets/img/products/enerpac/flat-jack-t.png",
+      "details": [
+        "/assets/img/products/enerpac/flat-jack-d1.png",
+        "/assets/img/products/enerpac/flat-jack-d2.png"
+      ]
+    }
+  ]
+}

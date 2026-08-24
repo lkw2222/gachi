@@ -448,22 +448,14 @@ PAGES["service/privacy.html"] = {
 
 /* ===================== 4. 제품 ===================== */
 PAGES["product/enerpac.html"] = {
-  title: "에너팩 제품소개", desc: "휴대용 진동측정기, 레이저 축정렬기 등 에너팩 제품을 소개합니다.",
-  descEn: "Enerpac products: portable vibration meters, laser shaft aligners, and more.",
-  body: sec(draft() + head("Products", "에너팩 (Enerpac)", "", "설비 진단·정비를 위한 정밀 측정 장비 브랜드, 에너팩 제품을 소개합니다.") +
-    lead("에너팩은 휴대용 진동측정기, 레이저 축정렬기 등 설비의 상태 진단과 예지보전을 위한 정밀 측정 장비를 제공합니다. (실제 제품 정보·이미지로 수정해주세요.)") +
-    feats([
-      { i: "<i data-lucide='activity'></i>", h: "휴대용 진동측정기", p: "회전설비의 진동을 측정해 이상 징후를 조기에 진단합니다." },
-      { i: "<i data-lucide='target'></i>", h: "레이저 축정렬기", p: "축정렬 상태를 정밀하게 측정·교정하여 설비 수명을 연장합니다." },
-      { i: "<i data-lucide='thermometer'></i>", h: "기타 측정 장비", p: "온도·회전수 등 다양한 설비 진단 장비를 제공합니다." },
-    ])) +
-    sec(head("Lineup", "세부 제품", "", "세부 제품 라인업입니다. (실제 제품으로 교체)") +
-      `<div class="services">
-        <div class="svc reveal"><div class="ic"><i data-lucide='activity'></i></div><h3>진동측정기 모델 A</h3><p>휴대형 진동 측정·분석 장비. 상세 사양은 추후 업데이트.</p></div>
-        <div class="svc reveal"><div class="ic"><i data-lucide='target'></i></div><h3>레이저 축정렬기 모델 B</h3><p>고정밀 축정렬 측정 장비. 상세 사양은 추후 업데이트.</p></div>
-        <div class="svc reveal"><div class="ic"><i data-lucide='wrench'></i></div><h3>측정 액세서리</h3><p>센서·케이블 등 측정 부속품.</p></div>
-      </div>`, "sec-soft") +
-    sec(`<div style="text-align:center"><a class="btn btn-gold" href="/support/contact.html">제품 문의하기 →</a></div>`),
+  title: "에너팩 제품소개", desc: "유압 실린더·펌프·유압잭·토크렌치 등 에너팩(ENERPAC) 유압 공구 제품을 소개합니다.",
+  descEn: "ENERPAC hydraulic tools — cylinders, pumps, jacks, torque wrenches, and more.",
+  body: sec(`<div id="enerpacIntro" class="reveal"></div>`) +
+    sec(head("Products", "제품 라인업", "", "대표 제품을 선택하면 상세 사양(카탈로그)을 확인할 수 있습니다.") +
+      `<div id="enerpacGrid" class="prod-grid"><p style="color:var(--muted)">불러오는 중...</p></div>`, "sec-soft") +
+    sec(`<div class="sec-head center reveal" style="margin-bottom:24px"><h2>제품 견적·구매 문의</h2><p>필요하신 제품이나 사양을 알려주시면 신속하게 안내해 드립니다.</p></div>
+      <div style="text-align:center"><a class="btn btn-gold" href="/support/contact.html">제품 문의하기 →</a> <a class="btn btn-navy" data-tel href="#">대표번호 1533-2512</a></div>`) +
+    `<script src="/assets/js/enerpac.js" defer></script>`,
 };
 
 /* ===================== 5. 고객센터 ===================== */

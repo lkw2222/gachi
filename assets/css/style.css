@@ -368,6 +368,49 @@ form.card .btn-gold{width:100%;justify-content:center;margin-top:8px;font-size:1
 .notice-nav .t{color:var(--navy);font-weight:600;flex:1}
 .notice-back{margin-top:28px;text-align:center}
 
+/* ============ 에너팩 제품 (그리드 + 라이트박스) ============ */
+.prod-intro{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:center}
+.prod-intro .pi-img{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.prod-intro .pi-img img{width:100%;height:auto;border-radius:8px}
+.prod-intro .brand{font-size:13px;font-weight:800;letter-spacing:.2em;color:var(--gold);margin-bottom:10px}
+.prod-intro h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;color:var(--navy);line-height:1.25;margin-bottom:14px}
+.prod-intro p{color:var(--muted);font-size:16px;margin-bottom:24px}
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.prod-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;transition:.28s;display:flex;flex-direction:column;text-align:left;padding:0;font-family:inherit}
+.prod-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:transparent}
+.prod-thumb{aspect-ratio:4/3;background:#fff;display:flex;align-items:center;justify-content:center;padding:16px;border-bottom:1px solid var(--line)}
+.prod-thumb img{max-width:100%;max-height:100%;object-fit:contain}
+.prod-meta{padding:15px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.prod-meta .nm{font-size:14.5px;font-weight:700;color:var(--navy);line-height:1.35}
+.prod-meta .more{font-size:12.5px;font-weight:700;color:var(--gold);margin-top:auto}
+.prod-card:hover .prod-meta .more{color:var(--navy)}
+
+/* 라이트박스 */
+.lightbox{position:fixed;inset:0;z-index:210;background:rgba(6,11,26,.9);display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;transition:.25s}
+.lightbox.open{opacity:1;visibility:visible}
+.lb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 22px;color:#fff;flex-shrink:0}
+.lb-bar .lb-title{font-size:16px;font-weight:700}
+.lb-bar .lb-count{font-size:13px;color:rgba(255,255,255,.6);margin-left:10px;font-weight:600}
+.lb-close{background:none;border:0;color:#fff;font-size:30px;line-height:1;cursor:pointer;padding:0 6px}
+.lb-stage{flex:1;overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding:0 22px 26px}
+.lb-stage img{max-width:min(900px,92vw);width:100%;height:auto;background:#fff;border-radius:8px}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;
+  background:rgba(255,255,255,.14);border:0;color:#fff;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+.lb-nav:hover{background:var(--gold);color:#1b1402}
+.lb-prev{left:18px}.lb-next{right:18px}
+.lb-nav[disabled]{opacity:0;pointer-events:none}
+
+@media(max-width:900px){
+  .prod-intro{grid-template-columns:1fr;gap:28px}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .prod-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .lb-nav{width:42px;height:42px;font-size:22px}
+  .lb-prev{left:8px}.lb-next{right:8px}
+}
+
 /* ============ SVG 아이콘 (Lucide) ============ */
 .value-ic svg,.feat .ic svg,.svc .ic svg,.info-list .ic svg{width:26px;height:26px;stroke-width:1.7}
 .value-ic{color:var(--navy)}
