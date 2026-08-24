@@ -61,7 +61,7 @@
     lb.innerHTML =
       '<div class="lb-bar"><div><span class="lb-title"></span><span class="lb-count"></span></div>'+
         '<button class="lb-close" type="button" aria-label="닫기">×</button></div>'+
-      '<div class="lb-stage"><img alt=""></div>'+
+      '<div class="lb-stage"><div class="lb-spinner"></div><img alt=""></div>'+
       '<button class="lb-nav lb-prev" type="button" aria-label="이전">‹</button>'+
       '<button class="lb-nav lb-next" type="button" aria-label="다음">›</button>';
     document.body.appendChild(lb);
@@ -84,8 +84,13 @@
   function show(i){
     if(i < 0 || i >= gallery.length) return;
     gIdx = i;
+    var stage = lb.querySelector(".lb-stage");
+    stage.classList.add("loading");                 // 로딩 스피너 표시
+    lbImg.onload = function(){ stage.classList.remove("loading"); };
+    lbImg.onerror = function(){ stage.classList.remove("loading"); };
     lbImg.src = gallery[i];
-    lb.querySelector(".lb-stage").scrollTop = 0;
+    if(lbImg.complete && lbImg.naturalWidth > 0) stage.classList.remove("loading"); // 캐시된 경우
+    stage.scrollTop = 0;
     lbCount.textContent = gallery.length > 1 ? (i+1) + " / " + gallery.length : "";
     lbPrev.disabled = (i === 0);
     lbNext.disabled = (i === gallery.length-1);
