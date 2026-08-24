@@ -22,7 +22,8 @@
     if(!host) return;
     host.innerHTML =
       '<div class="prod-intro">'+
-        '<div class="pi-img"><img src="'+p.thumb+'" alt="ENERPAC" loading="lazy"></div>'+
+        '<div class="pi-img"><img src="'+p.thumb+'" alt="ENERPAC" loading="lazy">'+
+          (p.caption ? '<div class="pi-cap">'+esc(p.caption)+'</div>' : '')+'</div>'+
         '<div>'+
           '<div class="brand">ENERPAC</div>'+
           '<h2>산업 현장이 신뢰하는<br>유압 공구, 에너팩</h2>'+
