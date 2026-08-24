@@ -23,6 +23,7 @@
     host.innerHTML =
       '<div class="prod-intro">'+
         '<div class="pi-img"><img src="'+p.thumb+'" alt="ENERPAC" loading="lazy">'+
+          (p.name ? '<div class="pi-name">'+fmtName(p.name)+'</div>' : '')+
           (p.caption ? '<div class="pi-cap">'+esc(p.caption)+'</div>' : '')+'</div>'+
         '<div>'+
           '<div class="brand">ENERPAC</div>'+
