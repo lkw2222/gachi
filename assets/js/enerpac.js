@@ -29,7 +29,7 @@
           '<div class="brand">ENERPAC</div>'+
           '<h2>산업 현장이 신뢰하는<br>유압 공구, 에너팩</h2>'+
           '<p>에너팩(ENERPAC)은 전 세계 산업 현장에서 사용되는 유압 공구 전문 브랜드입니다. 유압 실린더·펌프·유압잭·토크렌치 등 높은 내구성과 정밀도를 갖춘 제품으로 안전하고 효율적인 작업을 지원합니다.</p>'+
-          (p.details && p.details.length ? '<button class="btn btn-gold" type="button" id="enerpacCatalog">전체 카탈로그 보기 ('+p.details.length+') →</button>' : '')+
+          (p.details && p.details.length ? '<button class="btn btn-gold" type="button" id="enerpacCatalog">카탈로그 보기 ('+p.details.length+') →</button>' : '')+
         '</div>'+
       '</div>';
     var b = document.getElementById("enerpacCatalog");
