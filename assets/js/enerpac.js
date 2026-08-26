@@ -32,8 +32,11 @@
           (p.details && p.details.length ? '<button class="btn btn-gold" type="button" id="enerpacCatalog">카탈로그 보기 ('+p.details.length+') →</button>' : '')+
         '</div>'+
       '</div>';
+    function openCatalog(){ if(p.details && p.details.length) openLightbox(p.details, "ENERPAC 카탈로그"); }
     var b = document.getElementById("enerpacCatalog");
-    if(b) b.addEventListener("click", function(){ openLightbox(p.details, "ENERPAC 카탈로그"); });
+    if(b) b.addEventListener("click", openCatalog);
+    var piImg = host.querySelector(".pi-img");
+    if(piImg && p.details && p.details.length){ piImg.classList.add("clickable"); piImg.addEventListener("click", openCatalog); }
   }
 
   /* ---- 제품 그리드 ---- */
