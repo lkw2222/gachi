@@ -119,7 +119,7 @@
       .then(function(r){ return r.json(); })
       .then(function(data){
         var ps = (data && data.products) || [];
-        if(ps.length){ renderIntro(ps[0]); renderGrid(ps.slice(1)); }
+        if(ps.length){ renderIntro(ps[0]); renderGrid(ps); }
         if(window.gachiIcons) window.gachiIcons();
         // reveal 재적용
         var io = new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.1});
